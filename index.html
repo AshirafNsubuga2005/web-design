@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hafiz Ashiraf">
+    <meta name="description" content="The official website for  The Little Taco Shop">
+    <title>The Little Taco Shop</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <h1 class="header__h1"> Little Taco shop</h1>
+        <nav class="header__nav">
+            <button class="nav-toggle" aria-controls="main-navigation" aria-expanded="false">☰<span class="offscreen"> Menu</span></button>
+            <ul id="main-navigation" class="header__ul">
+                <li>
+                    <a href="#menu">Menu</a>
+                </li>
+                <li>
+                    <a href="hours.html">Hours</a>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="about.html">About</a>
+                </li>
+                <li>
+                    <button class="auth-open" data-target="login-modal">Login</button>
+                </li>
+                <li>
+                    <button class="auth-open" data-target="signup-modal">Signup</button>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="hero">
+        <h2 class="hero__h2">Bienvenidos</h2>
+        <figure>
+            <img src="imgs/tacos_and_drink_1000x667.png" alt="Tacos and a Drink" title="We love Tacos" width="1000" height="667">
+            <figcaption class="offscreen">
+                Tacos and a Drink
+            </figcaption>
+        </figure>
+    </section>
+    <main class="main">
+        <article id="menu" class="main__article menu">
+            <h2 class="menu__h2">Our Menu</h2>
+            <table class="menu__container">
+                <caption class="offscreen">Our Taco</caption>
+                <thead>
+                    <tr>
+                        <th class="menu__header" scope="col">Tacos</th>
+                        <th class="menu__header" scope="col">Quantity</th>
+                        <th class="menu__header" scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th class="menu__item menu__cr" scope="row" rowspan="3">
+                            crunchy
+                        </th>
+                        <td class="menu__item">1</td>
+                        <td class="menu__item">$1.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">2</td>
+                        <td class="menu__item">$2.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">3</td>
+                        <td class="menu__item">$3.25</td>
+                    </tr>
+                    <tr>
+                        <th class="menu__item menu__sf" scope="row" rowspan="3">
+                            Soft
+                        </th>
+                        <td class="menu__item">1</td>
+                        <td class="menu__item">$2.00</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">2</td>
+                        <td class="menu__item">$3.50</td>
+                    </tr>
+                    <tr>
+                        <td class="menu__item">3</td>
+                        <td class="menu__item">$4.50</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="menu__item menu__cs" colspan="3">
+                            Chips &amp; Salsa $2
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <p class="center">
+                <a href="#">Back To Top</a>
+            </p>
+        </article>
+    </main>
+    <hr>
+    
+    <div id="login-modal" class="modal hidden" aria-hidden="true" role="dialog" aria-label="Login form">
+        <div class="modal-panel">
+            <button class="modal-close" aria-label="Close">×</button>
+            <h2>Login</h2>
+            <form id="login-form" class="modal-form" action="#" method="post">
+                <label for="login-email">Email</label>
+                <input id="login-email" name="email" type="email" required>
+
+                <label for="login-password">Password</label>
+                <input id="login-password" name="password" type="password" required>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn">Sign in</button>
+                    <button type="button" class="btn btn-secondary modal-switch" data-switch="signup-modal">Create account</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="signup-modal" class="modal hidden" aria-hidden="true" role="dialog" aria-label="Signup form">
+        <div class="modal-panel">
+            <button class="modal-close" aria-label="Close">×</button>
+            <h2>Create account</h2>
+            <form id="signup-form" class="modal-form" action="#" method="post">
+                <label for="signup-name">Name</label>
+                <input id="signup-name" name="name" type="text" required>
+
+                <label for="signup-email">Email</label>
+                <input id="signup-email" name="email" type="email" required>
+
+                <label for="signup-password">Password</label>
+                <input id="signup-password" name="password" type="password" required>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Create</button>
+                    <button type="button" class="btn modal-switch" data-switch="login-modal">Have an account?</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>
+            <span class="nowrap">Copyright &copy; <time id="year"></time></span>
+            <span class="nowrap">Little Taco Shop</span>
+        </p>
+    </footer>
+</body>
+</html>
