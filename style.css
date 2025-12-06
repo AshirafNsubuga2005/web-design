@@ -454,6 +454,125 @@ tfoot td{
     background:#f3f3f3
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px){
+    /* slightly larger, but still comfortable text on tablet */
+    html{ font-size: clamp(1rem, 2.2vh, 1.15rem); }
+
+    /* let the site use more of the viewport on tablets */
+    body{
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 3%;
+        box-shadow: none;
+        border-left: none;
+        border-right: none;
+    }
+
+    /* make nav wrap nicely and center links */
+    .header__ul{
+        justify-content: center;
+        gap: 1.25rem;
+        flex-wrap: wrap;
+        padding: 0.5rem 2%;
+    }
+
+    .header__h1{ padding: 0.5rem 1rem; }
+
+    /* hero adjustments so the heading doesn't overlap */
+    .hero__h2{
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: 1.35rem;
+        text-shadow: 2px 2px 4px var(--BORDER-COLOR);
+    }
+
+    .hero figure img{
+        width: 100%;
+        height: auto;
+        max-height: 60vh;
+        object-fit: cover;
+    }
+
+    /* change menu to a 2-column grid for tablet widths for readability */
+    .menu__container{
+        grid-auto-columns: repeat(2, 1fr);
+        grid-template-areas:
+            "hd1 hd2"
+            "hd3 hd3"
+            "cr cr1"
+            "cr cr2"
+            "cr cr3"
+            "sf sf1"
+            "sf sf2"
+            "sf sf3"
+            "cs cs";
+        gap: 0.1em;
+    }
+
+    .menu__header,
+    .menu__item{ padding: 0.75rem; }
+
+    /* slightly tighter footer on tablets */
+    .footer{ padding: 0.5rem 1rem; }
+}
+.modal-panel{
+    width: 100%;
+    max-width: 420px;
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.25rem;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+    position: relative;
+}
+.modal-panel h2{
+    margin:0 0 0.75rem;
+    color:var(--HIGHLIGHT-COLOR)
+}
+.modal-close{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+.modal-form label{
+    display:block;
+    margin-top:0.5rem;
+    font-weight:bold
+}
+.modal-form input{
+    width:100%;
+    padding:0.6rem;
+    border-radius:8px;
+    border:1px solid #ddd;
+    margin-top:0.35rem
+}
+.form-actions{
+    display:flex;
+    gap:0.5rem;
+    justify-content:flex-end;
+    margin-top:0.75rem
+    }
+.btn{
+    background:transparent;
+    border:1px solid var(--LINK-COLOR);
+    padding:0.5rem 0.8rem;
+    border-radius:8px;
+    cursor:pointer
+}
+.btn-primary{
+    background:var(--HIGHLIGHT-COLOR);
+    color:#fff;
+    border-color:transparent;
+}
+.btn-secondary{
+    background:#f3f3f3
+}
+
+
 @media (max-width:480px){
     .modal-panel{
         padding:0.9rem
@@ -462,3 +581,4 @@ tfoot td{
         padding:0.5rem
     }
 }
+
